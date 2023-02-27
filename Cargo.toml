@@ -1,0 +1,26 @@
+[package]
+name = "can-dbc-wrapper"
+edition = "2021"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+description = "A sample project with wasm-pack"
+license = "MIT/Apache-2.0"
+repository = "https://github.com/yourgithubusername/hello-wasm"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+derive-getters = "0.2"
+nom = { version = "7.1", features = ["alloc"] }
+wasm-bindgen = "0.2.84"
+serde-wasm-bindgen = "0.4.5"
+serde = { version = "1.0", optional = true }
+serde_derive = { version = "1.0", optional = true }
+serde_json = "1.0.93"
+js-sys = "0.3.61"
+wee_alloc = { version = "0.4.5", optional = true }
+
+[features]
+default = ["with-serde"]
+with-serde = ["serde", "serde_derive"]
