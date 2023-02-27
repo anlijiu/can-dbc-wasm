@@ -826,21 +826,13 @@ extern {
 
 
 #[wasm_bindgen]
-pub fn greet(dbc_in: &str) -> JsValue {
+pub fn parse(dbc_in: &str) -> JsValue {
     // alert(&format!("Hello, {}!", name));
 
     match DBC::try_from(dbc_in) {
         Ok(dbc_content) => {
             println!("DBC Content{:#?}", dbc_content);
             return JsValue::from_str(serde_json::to_string(&dbc_content).unwrap().as_str());
-            // let msgs = dbc_content.messages();
-            // let mut s = String::from("");
-            // for m in dbc_content.messages() {
-            // 
-            //     s += m.message_name();
-            // }
-            // 
-            // return JsValue::from_str(s.as_str());
         },
         Err(e) => {
             match e {

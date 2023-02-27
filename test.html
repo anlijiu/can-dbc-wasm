@@ -81,11 +81,11 @@ BO_ 870 RADAR_TRACK_366: 8 XXX
 
 BO_ 1177 RADAR_499: 8 XXX
       `;
-      import init, { greet } from './pkg/can_dbc_wrapper.js';
+      import init, { parse } from './pkg/can_dbc_wasm.js';
 
       async function run_wasm() {
         await init();
-        const r = greet(dbccontent);
+        const r = parse(dbccontent);
         console.log(r)
       }
 

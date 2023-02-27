@@ -1,11 +1,11 @@
 [package]
-name = "can-dbc-wrapper"
+name = "can-dbc-wasm"
 edition = "2021"
 version = "0.1.0"
-authors = ["Your Name <you@example.com>"]
-description = "A sample project with wasm-pack"
+authors = ["anlijiu <anlijiu@gmail.com>"]
+description = "dbc parser wasm"
 license = "MIT/Apache-2.0"
-repository = "https://github.com/yourgithubusername/hello-wasm"
+repository = "https://github.com/anlijiu/can-dbc-wasm"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
